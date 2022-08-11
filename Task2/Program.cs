@@ -9,18 +9,18 @@ Console.WriteLine("Введите число и нажмите Enter:");
 string? numberString = Console.ReadLine();
 
 int number = int.Parse(numberString);
-int number1 = 0;
-if(number < 100 && number > -100)
+
+string str = number.ToString();
+int[] array = new int[str.Length];
+for( int index = 0; index < str.Length; index++)
 {
-    Console.WriteLine("Третьей цифры нет");
+    array[index] = int.Parse(str[index].ToString());
 }
-else if(number < -100)
+if (number > 100)
 {
-    number1 = number / (-100) % 10;
-    Console.WriteLine(number1);
+    Console.WriteLine("Третья цифра: " + array[2]);
 }
 else
 {
-    number1 = number/100 % 10;
-    Console.WriteLine(number1);
+    Console.WriteLine("Третьей цифры нет.");
 }
